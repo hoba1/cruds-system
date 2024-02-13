@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/normalise.css">
+    <link rel="stylesheet" href="css/all.min.css">
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/master.css">
+    <title>Cruds System</title>
+</head>
+<body class="bg-black">
+    <div class="content mt-2">
+        <div class="container">
+            <div class="head">
+                <h2 class="heading-title text-uppercase text-center text-light">cruds</h2>
+                <p class="text-uppercase text-center text-light fs-5">product management system</p>
+            </div>
+            <div class="add-data">
+                <div class="input-group flex-nowrap mb-3">
+                    <input type="text" class="form-control bg-black border border-primary text-light input-title" placeholder="title" aria-describedby="addon-wrapping">
+                </div>
+                <div class="input-group mb-3 gap-2">
+                    <input type="number" class="form-control bg-black border border-primary text-light input-price" placeholder="price" oninput="totalnum()">
+                    <input type="number" class="form-control bg-black border border-primary text-light input-taxes" placeholder="taxes" oninput="totalnum()">
+                    <input type="number" class="form-control bg-black border border-primary text-light input-ads" placeholder="ads" oninput="totalnum()">
+                    <input type="number" class="form-control bg-black border border-primary text-light input-discount" placeholder="discount" oninput="totalnum()">
+                    <p class="text-light m-0 fs-5 bg-danger p-3 total">Total:</p>
+                </div>
+                <div class="input-group flex-nowrap mb-3">
+                    <input type="number" class="form-control bg-black border border-primary text-light input-count" placeholder="count" aria-describedby="addon-wrapping">
+                </div>
+                <div class="input-group flex-nowrap mb-3">
+                    <input type="text" class="form-control bg-black border border-primary text-light input-category" placeholder="category" aria-describedby="addon-wrapping">
+                </div>
+                <button type="button" class="btn btn-primary w-100 rounded-pill mb-3 create-btn">Create</button>
+                <div class="input-group flex-nowrap mb-3">
+                    <input class="form-control bg-black border border-primary text-light input-search" oninput="searchdata(this.value)" list="datalistOptions" id="exampleDataList" placeholder="Type to search..." >
+                    <datalist id="datalistOptions">
+                        <!-- <option value="San Francisco">
+                        <option value="New York">
+                        <option value="Seattle">
+                        <option value="Los Angeles">
+                        <option value="Chicago"> -->
+                    </datalist>
+                </div>
+                <button type="button" onclick="getsearchmod(this.id)" class="btn btn-primary rounded-pill mb-3 col-5 search-by-title float-start" id="title">Search By Title</button>
+                <button type="button" onclick="getsearchmod(this.id)" class="btn btn-primary rounded-pill mb-3 col-5 search-by-category float-end" id="category">Search By Category</button>
+                <div class="delallbtn">
+                    
+                </div>
+            </div>
+            <div class="show-data">
+                <table class="w-100 text-center">
+                    <tr>
+                        <th class="text-uppercase text-light p-1">id</th>
+                        <th class="text-uppercase text-light p-1">title</th>
+                        <th class="text-uppercase text-light p-1">price</th>
+                        <th class="text-uppercase text-light p-1">taxes</th>
+                        <th class="text-uppercase text-light p-1">ads</th>
+                        <th class="text-uppercase text-light p-1">discount</th>
+                        <th class="text-uppercase text-light p-1">total</th>
+                        <th class="text-uppercase text-light p-1">category</th>
+                        <th class="text-uppercase text-light p-1">update</th>
+                        <th class="text-uppercase text-light p-1">delete</th>
+                    </tr>
+
+                    <tbody class="show">
+                        <!-- <tr>
+                            <td class="text-light p-1">1</td>
+                            <td class="text-light p-1">samsung</td>
+                            <td class="text-light p-1">2000</td>
+                            <td class="text-light p-1">100</td>
+                            <td class="text-light p-1">100</td>
+                            <td class="text-light p-1">100</td>
+                            <td class="text-light p-1">2100</td>
+                            <td class="text-light p-1">phone</td>
+                            <td class="text-light p-1"><button type="button" class="btn btn-primary rounded-pill">Update</button></td>
+                            <td class="text-light p-1"><button type="button" class="btn btn-primary rounded-pill">Delete</button></td>
+                        </tr> -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="js/main.js"></script>
+</body>
+</html>
